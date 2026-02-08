@@ -1,0 +1,711 @@
+/* ============================================
+   Custom CSS for Results Page
+   iGEM Wiki Coding Selection Project
+   ============================================ */
+
+/* Results Grid Layout */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.result-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.result-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.result-icon {
+    font-size: 1.8rem;
+    color: var(--bs-primary);
+    margin-right: 1rem;
+}
+
+.result-card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.result-card-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
+}
+
+.result-card-content {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.result-card-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--bs-primary);
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+/* Chart/Visualization Placeholders */
+.chart-container {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 3rem 0;
+    border: 1px dashed var(--border-color);
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.chart-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.chart-legend {
+    display: flex;
+    gap: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.legend-color.conv {
+    background: #e74c3c;
+}
+
+.legend-color.noconv {
+    background: #3498db;
+}
+
+.chart-placeholder {
+    height: 300px;
+    background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.chart-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+/* Key Findings Section */
+.key-findings {
+    background: linear-gradient(135deg, var(--primary-bg) 0%, rgba(255, 255, 255, 0.9) 100%);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin: 3rem 0;
+}
+
+.key-findings-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.key-findings-title {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.key-findings-subtitle {
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.findings-list {
+    list-style: none;
+    padding: 0;
+}
+
+.findings-list li {
+    padding: 1rem 1rem 1rem 3rem;
+    margin-bottom: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.findings-list li:before {
+    content: '✓';
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #085126;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Result Subsection Styles */
+.result-subsection {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--accent-color);
+}
+
+.subsection-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.result-subsection ul,
+.result-subsection ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.result-subsection li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.9em;
+    margin: 2rem 0;
+    caption-side: top;
+    border: 1.6px solid #dee2e6; 
+    border-radius: 6px; 
+    overflow: hidden; /* 确保圆角不破坏内部边框 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); 
+}
+.stats-table caption {
+    font-size: 1.3em;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0.75em;
+    color: #1a1f51;
+    opacity: 0.9;
+}
+
+.stats-table thead {
+    border-bottom: 2px solid #10293a;
+}
+.stats-table thead th {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2c3e50;
+    padding: 15px 12px;
+    text-align: center;
+}
+.stats-table tbody th {
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: left;
+    padding: 12px 15px;
+    background-color: #f8f9fa;
+    border-right: 1px solid #dee2e6;
+    border-bottom: 1.3px solid #bdc0c3;
+}
+.stats-table tbody td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.stats-table tbody tr:nth-child(8n+1) th[rowspan="8"]{
+    background-color: #e6e6e6;
+    font-size: 1.1rem;
+}
+
+.stats-table tfoot td {
+    padding: 15px;
+    background-color: #f4f4f4;
+    color: #000927;
+    font-size: 0.85em;
+    border-top: 2px dashed #bdc3c7;
+}
+
+/* 移动端水平滚动容器 */
+@media (max-width: 768px) {
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto; /* 开启水平滚动 */
+        -webkit-overflow-scrolling: touch; /* 为iOS设备增加滚动弹性 */
+        margin-bottom: 1rem;
+        border: 1px solid #dee2e6; /* 可选：为滚动区域加个边框 */
+        border-radius: 4px;
+    }
+    /* 可选：让表格在移动端字体稍小 */
+    .stats-table {
+        font-size: 0.85em;
+        margin: 0; /* 移除外部margin，由容器控制 */
+        min-width: 700px; /* 设置一个最小宽度，确保表格不会过度压缩 */
+    }
+    .stats-table th,
+    .stats-table td {
+        padding: 10px 8px; /* 在移动端适当减少内边距 */
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .chart-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .key-findings {
+        padding: 1.5rem;
+    }
+    
+    .findings-list li {
+        padding-left: 2.5rem;
+    }
+}
+
+/* Methods Hero Reuse */
+.methods-hero {
+    padding: 3rem 0 3rem;
+    background: linear-gradient(135deg, #f0f7ff 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #2c3e50;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s;
+    z-index: 99;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #233140;
+    transform: translateY(-5px);
+}
+
+/* Sidebar Navigation Layout */
+.wrapper {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.sidebar {
+    position: sticky;
+    top: 100px; /* Offset below navbar */
+    align-self: start;
+    height: fit-content;
+}
+
+.sidebar-nav {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 0.75rem;
+}
+
+.sidebar-link {
+    color: #5d6d7e;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.sidebar-link:hover {
+    color: #2c3e50;
+    background: rgba(44, 62, 80, 0.05);
+}
+
+.sidebar-link.active {
+    color: #8a9ca3; /* Accent color for active state */
+    font-weight: 600;
+    background: rgba(138, 156, 163, 0.1);
+    border-left: 3px solid #8a9ca3;
+    padding-left: 0.75rem;
+}
+
+.sidebar-loading {
+    color: #8a9ca3;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.main-content {
+    min-width: 0; /* Prevent grid overflow */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1.5rem;
+    }
+    
+    .sidebar {
+        display: none; /* Hide desktop sidebar on mobile */
+    }
+    
+    .main-content {
+        order: 1;
+    }
+}
+
+/* ===== Interactive Figure Triggers & Speech Bubbles ===== */
+/* 提示点基础样式 */
+.trigger {
+    cursor: help; /* 鼠标指针变成帮助问号，提升体验 */
+    position: relative; /* 为绝对定位的泡泡提供锚点 */
+    font-size: 1.3rem;
+    display: inline-block;
+    transition: color 0.2s;
+}
+/* 对话泡泡样式 - 默认隐藏 */
+.speech-bubble {
+    /* 定位：出现在提示点正上方中央 */
+    position: absolute;
+    bottom: 100%; /* 将泡泡底部对齐到触发点的顶部 */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* 水平居中，并向下偏移10px开始 */
+    /* 布局与盒子模型 */
+    width: 480px; /* 固定宽度，适合放图 */
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* 比卡片更深的阴影，突出层级 */
+    /* 初始状态：透明且不可交互 */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* 防止泡泡干扰鼠标事件 */
+    /* 过渡动画：所有属性平滑变化 */
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* 弹性过渡 */
+    z-index: 100; /* 确保显示在最上层 */
+    text-align: center;
+}
+
+/* 泡泡内图片样式 */
+.speech-bubble img {
+    width: 100%; /* 图片撑满泡泡宽度 */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    display: block; /* 消除图片底部间隙 */
+}
+
+/* 泡泡内文字样式 */
+.bubble-text {
+    font-size: 0.9rem;
+    color: #4a5568;
+    line-height: 1.4;
+    display: block;
+}
+
+/* === 4. 泡泡的四个可能方位 (由JS动态添加) === */
+/* 4.1 向下弹出 */
+.speech-bubble.bottom {
+    top: 100%;
+    bottom: auto;
+    transform: translateX(-50%) translateY(-10px);
+}
+/* 4.2 向左对齐 (当右侧空间不足时) */
+.speech-bubble.left {
+    left: auto;
+    right: 0;
+    transform: translateY(10px);
+}
+.speech-bubble.left.bottom {
+    transform: translateY(-10px);
+}
+/* 4.3 向右对齐 (当左侧空间不足时) */
+.speech-bubble.right {
+    left: 0;
+    transform: translateY(10px);
+}
+.speech-bubble.right.bottom {
+    transform: translateY(-10px);
+}
+
+/* === 5. 激活状态：显示泡泡 === */
+.trigger.active .speech-bubble {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+.trigger.active .speech-bubble.bottom {
+    transform: translateX(-50%) translateY(0);
+}
+.trigger.active .speech-bubble.left {
+    transform: translateY(0);
+}
+.trigger.active .speech-bubble.right {
+    transform: translateY(0);
+}
+
+/* === 6. 移动端优化 (可选) === */
+@media (max-width: 768px) {
+    .speech-bubble {
+        width: 90vw; /* 在手机上不要过宽 */
+        max-width: 300px;
+    }
+    .trigger {
+        /* 增大触摸区域 */
+        padding: 4px 2px;
+        margin: -4px -2px;
+    }
+}
+
+/* 可选：为泡泡添加一个小三角形指针 */
+/* 修复泡泡指针 */
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* 定位在泡泡底部 */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: white transparent transparent transparent; /* 创建向下的三角形 */
+}
+
+/* 当泡泡在上方显示时，指针在底部 */
+.speech-bubble.bottom::after {
+    top: -16px;
+    border-color: transparent transparent white transparent;
+}
+
+/* 确保泡泡有足够的z-index */
+.speech-bubble {
+    z-index: 1000 !important;
+}
+
+/* ===== Mobile Sidebar Components ===== */
+/* 悬浮汉堡菜单按钮 - 默认隐藏 */
+.floating-nav-toggle {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 999;
+    width: 60px;
+    height: 60px;
+    background: #2c3e50;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.floating-nav-toggle:hover {
+    background: #233140;
+    transform: scale(1.1);
+}
+
+.floating-nav-toggle i {
+    font-size: 1.5rem;
+}
+
+/* 移动端侧边栏覆盖层 */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* 移动端侧边栏内容 */
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 85%;
+    max-width: 300px;
+    background: white;
+    z-index: 1001;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    padding: 1.5rem;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-sidebar.active {
+    transform: translateX(0);
+}
+
+.mobile-sidebar .sidebar-nav {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.mobile-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f0f7ff;
+}
+
+.mobile-sidebar-header h3 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.3rem;
+}
+
+.close-sidebar {
+    background: none;
+    border: none;
+    color: #8a9ca3;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.close-sidebar:hover {
+    background: #f0f7ff;
+    color: #2c3e50;
+}
+
+/* ===== Mobile Sidebar Activation ===== */
+@media (max-width: 992px) {
+    .floating-nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-nav-toggle {
+        bottom: 20px;
+        left: 20px;
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 0 1rem;
+        margin: 2rem auto;
+    }
+}

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEG Study: Beta Events as Early Biomarkers of Alzheimer's Disease Conversion</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style-paper-details.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar - Sticky Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <!-- Logo and Brand Name -->
+            <a class="navbar-brand" href="index.html">
+                <div class="d-flex align-items-center">
+                    <div class="logo-placeholder me-2">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div>
+                        <span class="brand-name">iGEM</span>
+                        <span class="brand-subtitle">Wiki Coding</span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="paper-details.html">
+                            <i class="fas fa-file-pdf me-1"></i> Paper Details
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="methods.html">
+                            <i class="fas fa-flask me-1"></i> Methods
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="results.html">
+                            <i class="fas fa-images me-1"></i> Results
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="discussion.html">
+                            <i class="fas fa-comments me-1"></i> Discussion
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle me-1"></i> About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Left PDF area - Display current page only -->
+    <div class="pdf-container">
+        <div class="pdf-header">
+            <h2><i class="fas fa-file-pdf"></i> Research Paper</h2>
+        </div>
+        <div id="pdf-viewer">
+            <canvas id="current-pdf-page"></canvas>
+            <div class="page-number" id="page-indicator">Page 1</div>
+        </div>
+    </div>
+
+    <!-- Right content area -->
+    <div class="content-container" id="content-container">
+        <div class="mobile-pdf-indicator">
+            <i class="fas fa-mobile-alt"></i> PDF viewer is hidden on mobile. View on desktop for full experience.
+        </div>
+        
+        <div class="content-header">
+            <h1>High-power transient beta events as early biomarkers of Alzheimer's disease conversion: An MEG study</h1>
+            <p>A magnetoencephalography investigation of oscillatory events predicting progression from mild cognitive impairment to Alzheimer's disease</p>
+        </div>
+
+        <!-- 1. Abstract -->
+        <div class="section" data-pdf-page="1">
+            <h2 class="section-title">1. Abstract</h2>
+            <div class="section-content">
+                <p>This MEG study investigated <strong>transient high-power oscillatory "events" or "bursts"</strong> as potential biomarkers for predicting conversion from Mild Cognitive Impairment (MCI) to Alzheimer's Disease (AD). Analyzing resting-state data from MCI patients over 2.5 years, the researchers found that <strong>reduced expression of beta-band (12-30 Hz) events—specifically lower rate, power, and duration in the precuneus—was predictive of future AD conversion and cognitive decline</strong>. These event-based features offer a more precise interpretation of neural "slowing" than traditional averaged power metrics.</p>
+                
+                <div class="image-placeholder">
+                    <img src="https://i.ibb.co/JjRB7qqT/flow-abs.png" alt="flowchart for abstract">
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Introduction -->
+        <div class="section" data-pdf-page="2">
+            <h2 class="section-title">2. Introduction</h2>
+            <div class="section-content">
+                <p>Traditional analysis of MEG/EEG in AD focuses on <strong>oscillatory slowing</strong>, characterized by increased low-frequency and decreased high-frequency power, averaged over time. This averaging may mask important transient dynamics. Recent studies show neural oscillations often occur as <strong>transient high-power bursts</strong>. This study tested the hypothesis that features of these transient events, particularly in brain hubs of the AD-related "X" model (Anterior Cingulate Cortex - ACC, and Precuneus - PC), would differ between MCI patients who later convert to AD (CONV) and those who do not (NOCONV), and relate to cognitive decline.</p>
+                
+                <div class="image-placeholder">
+                    <img src="https://i.ibb.co/CKmRNDHn/flow-intro.png" alt="illustration for introduction">
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Methods -->
+        <div class="section" data-pdf-page="3">
+            <h2 class="section-title">3. Methods</h2>
+            <div class="section-content">
+                <p><strong>Subjects:</strong> 85 MCI patients, later classified into <strong>CONV (N=41)</strong> and <strong>NOCONV (N=44)</strong> groups after 2.5 years. Groups were matched for age, sex, and education.</p>
+                
+                <p><strong>Data Acquisition:</strong> Resting-state MEG recordings were obtained.</p>
+                
+                <p><strong>Analysis:</strong></p>
+                <ul class="feature-list">
+                    <li>Select regions of interest: Anterior Cingulate Cortex (ACC) and Precuneus (PC)</li>
+                    <li>Compute Power Spectral Density (PSD) and Time-Frequency Representations</li>
+                    <li>Detect high-power transient events (defined as local power maxima exceeding 6× median)</li>
+                    <li>Extract event features: <strong>rate, duration, frequency span, and power</strong></li>
+                </ul>
+                
+                <p><strong>Statistics:</strong> Compared groups (CONV vs. NOCONV) on PSD and event features. Used regression models to link event features to AD conversion probability and a composite Cognitive Performance Index.</p>
+                
+                <div class="image-placeholder">
+                    <img src="https://i.ibb.co/twTZVQFQ/flow-methods.jpg" alt="method pipeline">
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Results -->
+        <div class="section" data-pdf-page="7">
+            <h2 class="section-title">4. Results</h2>
+            <div class="section-content">
+                <p><strong>PSD Slowing Confirmed:</strong> CONV group showed the classic slowing pattern: decreased beta power and increased low-frequency (theta/alpha) power compared to NOCONV.</p>
+                
+                <p><strong>Events Underlie Averaged Power:</strong> Both alpha and beta oscillations manifested as transient events in non-averaged data. <strong>Beta event features strongly correlated with averaged beta power</strong>.</p>
+                
+                <p><strong>Key Biomarker Finding:</strong> <strong>Only beta-event features distinguished CONV from NOCONV</strong>. CONV patients had:</p>
+                <ul class="feature-list">
+                    <li><strong>Fewer beta events</strong></li>
+                    <li><strong>Lower beta event power</strong></li>
+                    <li><strong>Shorter beta event duration</strong> (especially in the Precuneus)</li>
+                </ul>
+                
+                <p><strong>Predictive Power:</strong> <strong>Reduced beta event expression predicted higher odds of AD conversion</strong> within 2.5 years and was associated with <strong>poorer cognitive performance</strong> in the CONV group.</p>
+                
+                <div class="image-placeholder side-by-side">
+                    <img src="https://i.ibb.co/5hS0B8k8/flow-reslut1.jpg" alt="box plots">
+                    <img src="https://i.ibb.co/hJSzV3Lx/flow-reslut2.jpg" alt="logistic regression plot">
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Discussion -->
+        <div class="section" data-pdf-page="11">
+            <h2 class="section-title">5. Discussion</h2>
+            <div class="section-content">
+                <p><strong>Beta Events as a Novel Biomarker:</strong> The study establishes <strong>transient beta event features as sensitive biomarkers for early AD prediction</strong>, refining the traditional concept of oscillatory slowing.</p>
+                
+                <p><strong>Link to Inhibitory Control:</strong> The findings align with literature linking <strong>beta oscillations to inhibitory cognitive control</strong>. Reduced beta events in CONV may reflect a <strong>loss of inhibitory function</strong>, potentially leading to network hyperexcitability, a known mechanism in AD.</p>
+                
+                <p><strong>Why Alpha Events Didn't Differ:</strong> Despite group differences in averaged alpha power, alpha event features did not predict conversion. This may indicate that alpha slowing in later MCI stages involves more stationary signal changes not captured by the transient event analysis.</p>
+                
+                <p><strong>Mechanistic Hypothesis:</strong> The reduction in cortical beta events may stem from <strong>diminished thalamocortical drive</strong>, leading to reduced recruitment of cortical inhibition and consequent hyperexcitability in AD progression.</p>
+                
+                <p><strong>Future Directions:</strong> Highlights the potential for event-based metrics to bridge human biomarkers and cellular-level disease mechanisms, guiding therapeutic development.</p>
+                
+                <div class="image-placeholder">
+                    <img src="https://i.ibb.co/9HwT9LJQ/flow-disc.png" alt="A conceptual diagram illustrating the proposed mechanistic pathway">
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. References -->
+        <div class="section" data-pdf-page="14">
+            <h2 class="section-title">6. Research Information</h2>
+            <div class="section-content">
+                <p><strong>Research Team:</strong> Collaborative study by Complutense University of Madrid, Brown University, and other institutions.</p>
+                
+                <p><strong>Funding:</strong> Supported by NIH, European Union NextGenerationEU, and other grants.</p>
+                
+                <p><strong>Data & Code Availability:</strong> Analysis code available on GitHub; data available upon request.</p>
+                
+                <p><strong>Publication:</strong> Published in <em>Imaging Neuroscience</em>, Volume 3, 2025.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 Alzheimer's Disease Biomarker Research | MEG-based Transient Event Analysis</p>
+            <p>Interactive academic presentation</p>
+        </div>
+    </div>
+
+    <script>
+        // PDF configuration
+        const PDF_URL = 'assets/downloads/alz.pdf';
+        let pdfDoc = null;
+        let currentPageNum = 1;
+        let scale = 1.2;
+        let isMobile = window.innerWidth <= 992;
+        
+        // Initialize PDF
+        async function initPdfViewer() {
+            if (isMobile) {
+                document.querySelector('.pdf-container').style.display = 'none';
+                return;
+            }
+            
+            try {
+                const loadingTask = pdfjsLib.getDocument(PDF_URL);
+                pdfDoc = await loadingTask.promise;
+                
+                // Initially render first page
+                await renderPage(1);
+                
+                // Initialize scroll observer
+                initScrollObserver();
+                
+            } catch (error) {
+                console.error('PDF loading error:', error);
+                document.getElementById('pdf-viewer').innerHTML = `
+                    <div style="padding: 40px; text-align: center; color: #8a9ca3;">
+                        <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 20px;"></i>
+                        <h3>PDF Loading Failed</h3>
+                        <p>Please check if the PDF file exists at: ${PDF_URL}</p>
+                    </div>
+                `;
+            }
+        }
+        
+        // Render specified PDF page
+        async function renderPage(pageNum) {
+            if (!pdfDoc || pageNum < 1 || pageNum > pdfDoc.numPages) return;
+            
+            const page = await pdfDoc.getPage(pageNum);
+            const canvas = document.getElementById('current-pdf-page');
+            const context = canvas.getContext('2d');
+            
+            // Calculate appropriate scaling to fit container
+            const container = document.getElementById('pdf-viewer');
+            const containerWidth = container.clientWidth - 40; // Subtract padding
+            const containerHeight = container.clientHeight - 40;
+            
+            const viewport = page.getViewport({ scale: 1 });
+            const scaleX = containerWidth / viewport.width;
+            const scaleY = containerHeight / viewport.height;
+            const scale = Math.min(scaleX, scaleY, 1.5); // Limit maximum scaling
+            
+            const scaledViewport = page.getViewport({ scale });
+            
+            canvas.width = scaledViewport.width;
+            canvas.height = scaledViewport.height;
+            
+            await page.render({
+                canvasContext: context,
+                viewport: scaledViewport
+            }).promise;
+            
+            // Update page indicator
+            document.getElementById('page-indicator').textContent = `Page ${pageNum}`;
+            currentPageNum = pageNum;
+        }
+        
+        // Initialize scroll observer
+        function initScrollObserver() {
+            const sections = document.querySelectorAll('.section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        
+                        if (!isMobile) {
+                            const pdfPage = entry.target.dataset.pdfPage;
+                            if (pdfPage) {
+                                const targetPage = parseInt(pdfPage);
+                                renderPage(targetPage);
+                            }
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '0px 0px -5% 0px'
+            });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        }
+        
+        // 窗口大小变化检测
+        window.addEventListener('resize', () => {
+            const newIsMobile = window.innerWidth <= 992;
+            if (newIsMobile !== isMobile) {
+                isMobile = newIsMobile;
+                if (isMobile) {
+                    document.querySelector('.pdf-container').style.display = 'none';
+                } else {
+                    document.querySelector('.pdf-container').style.display = 'flex';
+                    if (pdfDoc) {
+                        renderPage(currentPageNum);
+                    }
+                }
+            } else if (!isMobile && pdfDoc) {
+                // If not mobile and PDF loaded, re-render current page to fit new size
+                renderPage(currentPageNum);
+            }
+        });
+        
+        // Initialize after page load
+        document.addEventListener('DOMContentLoaded', () => {
+            initPdfViewer();
+        });
+    </script>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

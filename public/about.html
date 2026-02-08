@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iGEM Wiki Coding Selection | About This Project</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style-about.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Swiper CSS for Picture Gallery -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Custom CSS for Collapsible References -->
+    <style>
+        /* ============================================
+            Collapsible Reference Component Styles
+            Color scheme based on existing CSS variables with adjustments
+            ============================================ */
+        
+        /* References Section */
+        .references-section {
+            background-color: #f9fbfd;
+            padding: 3rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .references-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        /* Collapsible Container Styles */
+        .collapsible-container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .collapsible-container:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Collapsible Header Styles */
+        .collapsible-header {
+            background-color: #3a506b; /* Dark blue, different from original CSS dark gray */
+            color: white;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .collapsible-header:hover {
+            background-color: #2c3e50; /* 更深的蓝色 */
+        }
+        
+        .collapsible-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: white;
+        }
+        
+        /* 切换按钮样式 */
+        .toggle-button {
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffd8a6; /* 使用原CSS的高亮色，但作为图标颜色 */
+        }
+        
+        .collapsible-header.active .toggle-button {
+            transform: rotate(180deg);
+        }
+        
+        /* Collapsible Content Styles */
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .collapsible-content.open {
+            max-height: 2000px; /* Sufficient height for reference content */
+        }
+        
+        /* Reference List Styles */
+        .reference-list {
+            padding: 1.5rem;
+        }
+        
+        .reference-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eaeff5;
+            transition: background-color 0.2s ease;
+            padding: 0.75rem;
+            border-radius: 6px;
+        }
+        
+        .reference-item:hover {
+            background-color: #f5f9ff;
+        }
+        
+        .reference-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .reference-number {
+            font-weight: 700;
+            color: #4a6fa5; /* 中蓝色，用于编号 */
+            min-width: 3rem;
+            font-size: 1.1rem;
+            margin-right: 0.75rem;
+        }
+        
+        .reference-content {
+            flex: 1;
+            line-height: 1.6;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .reference-content em {
+            font-style: italic;
+            color: #5d6d7e;
+        }
+        
+        .reference-content a {
+            color: #4a6fa5; /* 与编号颜色一致 */
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            border-bottom: 1px dotted rgba(74, 111, 165, 0.3);
+        }
+        
+        .reference-content a:hover {
+            color: #2c3e50;
+            border-bottom: 1px solid rgba(44, 62, 80, 0.5);
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .references-section {
+                padding: 2rem 0;
+            }
+          
+            .reference-item {
+                flex-direction: column;
+            }
+          
+            .reference-number {
+                margin-bottom: 0.5rem;
+            }
+          
+            .collapsible-header {
+                padding: 1rem 1.25rem;
+            }
+          
+            .collapsible-header h3 {
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* Picture Gallery Styles */
+        .gallery-section {
+            padding: 3rem 0;
+        }
+        
+        .swiper {
+            width: 100%;
+            padding: 30px 0;
+        }
+        
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            margin: 10px;
+        }
+        
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .related-sections {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #6c757d;
+        }
+        
+        .related-sections a {
+            display: block;
+            margin-bottom: 5px;
+            color: #0d6efd;
+            text-decoration: none;
+        }
+        
+        /* PDF Download Section */
+        .pdf-section {
+            background-color: #f8fafc;
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 3rem 0;
+            border: 2px dashed var(--border-color);
+        }
+        
+        .pdf-icon {
+            font-size: 3.5rem;
+            color: #e74c3c;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pdf-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 1.5rem;
+        }
+        
+        .pdf-download-btn:hover {
+            background-color: #233140;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(44, 62, 80, 0.2);
+        }
+        
+        /* Sidebar Navigation Layout */
+        .wrapper {
+            display: grid;
+            grid-template-columns: 20% 80%;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        .sidebar {
+            position: sticky;
+            top: 100px; /* Offset below navbar */
+            align-self: start;
+            height: fit-content;
+        }
+        
+        .sidebar-nav {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .sidebar-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .sidebar-link {
+            color: #5d6d7e;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: block;
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        
+        .sidebar-link:hover {
+            color: #2c3e50;
+            background: rgba(44, 62, 80, 0.05);
+        }
+        
+        .sidebar-link.active {
+            color: #8a9ca3; /* Accent color for active state */
+            font-weight: 600;
+            background: rgba(138, 156, 163, 0.1);
+            border-left: 3px solid #8a9ca3;
+            padding-left: 0.75rem;
+        }
+        
+        .sidebar-loading {
+            color: #8a9ca3;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        .main-content {
+            min-width: 0; /* Prevent grid overflow */
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1.5rem;
+            }
+            
+            .sidebar {
+                display: none; /* Hide desktop sidebar on mobile */
+            }
+            
+            .main-content {
+                order: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .wrapper {
+                padding: 0 1rem;
+                margin: 2rem auto;
+            }
+        }
+
+        /* Mobile Sidebar Overlay */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Mobile Sidebar Content */
+        .mobile-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 85%;
+            max-width: 300px;
+            background: white;
+            z-index: 1001;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+            padding: 1.5rem;
+            box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-sidebar.active {
+            transform: translateX(0);
+        }
+
+        .mobile-sidebar .sidebar-nav {
+            background: transparent;
+            box-shadow: none;
+            padding: 0;
+        }
+
+        .mobile-sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f0f7ff;
+        }
+
+        .mobile-sidebar-header h3 {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 1.3rem;
+        }
+
+        .close-sidebar {
+            background: none;
+            border: none;
+            color: #8a9ca3;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+
+        .close-sidebar:hover {
+            background: #f0f7ff;
+            color: #2c3e50;
+        }
+
+        /* Floating Navigation Toggle */
+        .floating-nav-toggle {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            background: #2c3e50;
+            color: white;
+            border-radius: 50%;
+            border: none;
+            box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .floating-nav-toggle:hover {
+            background: #233140;
+            transform: scale(1.1);
+        }
+
+        .floating-nav-toggle i {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 992px) {
+            .floating-nav-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .floating-nav-toggle {
+                bottom: 20px;
+                left: 20px;
+                width: 55px;
+                height: 55px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar - Sticky Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <!-- Logo and Brand Name -->
+            <a class="navbar-brand" href="index.html">
+                <div class="d-flex align-items-center">
+                    <div class="logo-placeholder me-2">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div>
+                        <span class="brand-name">iGEM</span>
+                        <span class="brand-subtitle">Wiki Coding</span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="paper-details.html">
+                            <i class="fas fa-file-pdf me-1"></i> Paper Details
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="methods.html">
+                            <i class="fas fa-flask me-1"></i> Methods
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="results.html">
+                            <i class="fas fa-images me-1"></i> Results
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="discussion.html">
+                            <i class="fas fa-comments me-1"></i> Discussion
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">
+                            <i class="fas fa-info-circle me-1"></i> About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="methods-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center">
+                    <h1 class="display-5 fw-bold mb-4">About This Project</h1>
+                    <p class="lead mb-4">
+                        Detailed information about the research paper, authors, references, and supplementary materials. This section provides comprehensive background information and resources related to the study on beta events as early biomarkers of Alzheimer's disease conversion.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content with Sidebar Navigation -->
+    <div class="wrapper">
+        <aside class="sidebar">
+            <nav class="sidebar-nav" id="about-sidebar">
+                <!-- Navigation links will be dynamically generated by JavaScript -->
+                <div class="sidebar-loading">Loading navigation...</div>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <div id="about-content">
+                <!-- References Section -->
+                <section id="references" class="references-section">
+                    <div class="container">
+                        <div class="references-header">
+                            <h2 class="section-title">Key References</h2>
+                            <p class="section-subtitle">
+                                Foundational and methodological references that form the theoretical backbone of the research.
+                            </p>
+                        </div>
+                    
+                        <!-- Collapsible References Container -->
+                        <div class="collapsible-container">
+                            <div class="collapsible-header" onclick="toggleReferenceContent(this)">
+                                <span>
+                                    <h3 style="margin-top: 5px;" id="heading-4">Reference List</h3>
+                                </span>
+                                <span class="toggle-button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        
+                            <div class="collapsible-content ref open">
+                                <div class="reference-list">
+                                    <div class="reference-item">
+                                        <div class="reference-number">[1]</div>
+                                        <div class="reference-content">
+                                            <strong>Jones, S.R. (2016).</strong> <em>When brain rhythms aren't 'rhythmic': implication for their mechanisms and meaning.</em> Curr Opin Neurobiol.
+                                            <br>Foundational for the study's core premise. It argues for analyzing brain oscillations as transient "bursts" or "events" rather than sustained rhythms, justifying the methodological shift from averaged power spectral density to event-based analysis.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="reference-item">
+                                        <div class="reference-number">[2]</div>
+                                        <div class="reference-content">
+                                            <strong>Shin, H., et al. (2017).</strong> <em>The rate of transient beta frequency events predicts behavior across tasks and species.</em> eLife.
+                                            <br>Provides the primary methodological framework. The study's spectral event detection algorithm and feature extraction (rate, duration, power, frequency span) are directly based on this work.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="reference-item">
+                                        <div class="reference-number">[3]</div>
+                                        <div class="reference-content">
+                                            <strong>Pusil, S., López, M.E., et al. (2019).</strong> <em>Hypersynchronization in mild cognitive impairment: The 'X' model.</em> Brain.
+                                            <br>Presents the key neuroanatomical model guiding the study. The "X" model proposes disrupted connectivity between the Anterior Cingulate Cortex (ACC) and Precuneus (PC) as a hallmark of MCI-to-AD conversion, which is why these two regions were selected as ROIs.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="reference-item">
+                                        <div class="reference-number">[4]</div>
+                                        <div class="reference-content">
+                                            <strong>Lundqvist, M., et al. (2016, 2018, 2024).</strong> Various papers on beta/gamma bursts and working memory/cognitive control.
+                                            <br>Critical for interpreting the results in the Discussion. These studies establish the link between beta events and inhibitory control, volitional command, and working memory, allowing the authors to frame their findings (reduced beta events) as a potential deficit in inhibitory cognitive control in AD.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="reference-item">
+                                        <div class="reference-number">[5]</div>
+                                        <div class="reference-content">
+                                            <strong>Dauwels, J., et al. (2011).</strong> <em>Slowing and loss of complexity in Alzheimer's EEG...</em> Int J Alzheimers Dis.
+                                            <br>These are classic, frequently cited papers that document the phenomenon of "oscillatory slowing" (increased low-frequency, decreased high-frequency power) in Alzheimer's disease and its prodromal stages, forming the background problem the study seeks to refine.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="reference-item">
+                                        <div class="reference-number">[6]</div>
+                                        <div class="reference-content">
+                                            <strong>Babiloni, C., et al. (2004, 2009, 2010).</strong> Series on EEG rhythms in MCI/AD.
+                                            <br>Classic references documenting oscillatory changes in Alzheimer's disease.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="reference-item">
+                                        <div class="reference-number">[7]</div>
+                                        <div class="reference-content">
+                                            <strong>Jeong, J. (2004).</strong> <em>EEG dynamics in patients with Alzheimer's disease.</em> Clin Neurophysiol.
+                                            <br>Classic reference on EEG dynamics in Alzheimer's disease.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="reference-item">
+                                        <div class="reference-number">[8]</div>
+                                        <div class="reference-content">
+                                            <strong>Sherman, M.A., et al. (2016).</strong> <em>Neural mechanisms of transient neocortical beta rhythms...</em> Proc Natl Acad Sci USA.
+                                            <br>Provides a biophysically principled, cross-species model for the generation of neocortical beta events via thalamocortical drive. This model is central to the mechanistic hypothesis proposed in the Discussion (Section 4.4) linking reduced beta events to thalamocortical drive deficit and hyperexcitability.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="reference-item">
+                                        <div class="reference-number">[9]</div>
+                                        <div class="reference-content">
+                                            <strong>Maestú, F., et al. (2021).</strong> <em>Neuronal excitation/inhibition imbalance: Core element of a translational perspective on Alzheimer pathophysiology.</em> Ageing Res Rev.
+                                            <br>Connects the study's findings to a major contemporary pathophysiological theory of AD—E/I imbalance and hyperexcitability—providing a broader disease context.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Authors Section -->
+                <section id="authors" class="references-section">
+                    <div class="container">
+                        <div class="references-header">
+                            <h2 class="section-title">Authors and Affiliations</h2>
+                            <p class="section-subtitle">
+                                Research team and their institutional affiliations.
+                            </p>
+                        </div>
+                    
+                        <!-- Collapsible Authors Container -->
+                        <div class="collapsible-container">
+                            <div class="collapsible-header" onclick="toggleReferenceContent(this)">
+                                <span>
+                                    <h3 style="margin-top: 5px;" id="heading-5">Authors List</h3>
+                                </span>
+                                <span class="toggle-button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        
+                            <div class="collapsible-content ref open">
+                                <div class="reference-list">
+                                    <div class="reference-item">
+                                        <div class="reference-number">Corresponding</div>
+                                        <div class="reference-content">
+                                            <strong>Danylyna Shpakivska-Bilan</strong>
+                                            <br>Department of Experimental Psychology, School of Psychology & Center for Cognitive and Computational Neuroscience, Complutense University of Madrid, Madrid, Spain.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="reference-item">
+                                        <div class="reference-number">Co‑author</div>
+                                        <div class="reference-content">
+                                            <strong>Gianluca Susi</strong>
+                                            <br>Center for Cognitive and Computational Neuroscience & Department of Structure of Matter, Thermal Physics and Electronics, School of Physics, Complutense University of Madrid, Madrid, Spain.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="reference-item">
+                                        <div class="reference-number">Co‑author</div>
+                                        <div class="reference-content">
+                                            <strong>David W. Zhou</strong>
+                                            <br>Carney Institute for Brain Sciences & Department of Neuroscience, Brown University, Providence, RI, United States.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="reference-item">
+                                        <div class="reference-number">Co‑author</div>
+                                        <div class="reference-content">
+                                            <strong>Jesus Cabrera</strong>
+                                            <br>Department of Experimental Psychology, School of Psychology & Center for Cognitive and Computational Neuroscience, Complutense University of Madrid, Madrid, Spain.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="reference-item">
+                                        <div class="reference-number">Co‑author</div>
+                                        <div class="reference-content">
+                                            <strong>Blanca P. Carvajal</strong>
+                                            <br>Department of Experimental Psychology, School of Psychology & Center for Cognitive and Computational Neuroscience, Complutense University of Madrid, Madrid, Spain.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="reference-item">
+                                        <div class="reference-number">Co‑author</div>
+                                        <div class="reference-content">
+                                            <strong>Ernesto Pereda</strong>
+                                            <br>Department of Industrial Engineering and Institute of Biomedical Technology, Universidad de La Laguna, La Laguna, Tenerife, Spain.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="reference-item">
+                                        <div class="reference-number">Co‑author</div>
+                                        <div class="reference-content">
+                                            <strong>Maria Eugenia Lopez</strong>
+                                            <br>Department of Experimental Psychology, School of Psychology & Center for Cognitive and Computational Neuroscience, Complutense University of Madrid, Madrid, Spain.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="reference-item">
+                                        <div class="reference-number">Co‑author</div>
+                                        <div class="reference-content">
+                                            <strong>Ricardo Bruña</strong>
+                                            <br>Department of Experimental Psychology, School of Psychology & Center for Cognitive and Computational Neuroscience, Complutense University of Madrid, Madrid, Spain.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="reference-item">
+                                        <div class="reference-number">Co‑author</div>
+                                        <div class="reference-content">
+                                            <strong>Fernando Maestu</strong>
+                                            <br>Department of Experimental Psychology, School of Psychology & Center for Cognitive and Computational Neuroscience, Complutense University of Madrid, Madrid, Spain.
+                                        </div>
+                                    </div>
+                                
+                                    <div class="reference-item">
+                                        <div class="reference-number">Co‑author</div>
+                                        <div class="reference-content">
+                                            <strong>Stephanie R. Jones</strong>
+                                            <br>Carney Institute for Brain Sciences & Department of Neuroscience, Brown University, Providence, RI, United States.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Picture Gallery Section -->
+                <section id="gallery" class="gallery-section">
+                    <div class="container">
+                        <div class="references-header">
+                            <h2 class="section-title">Picture Gallery</h2>
+                            <p class="section-subtitle">
+                                Visual representations of key concepts, methodologies, and findings from the study.
+                            </p>
+                        </div>
+                        
+                        <!-- Swiper Container -->
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <!-- Slide 1 -->
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <img src="assets/imgs/Figure1.jpg" class="card-img" alt="Beta Event Detection">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Beta Event Detection Methodology</h5>
+                                            <p>Illustration of the spectral event detection algorithm used to identify transient high-power beta events from raw MEG signals. The algorithm isolates bursts exceeding a power threshold within specific frequency bands.</p>
+                                            <div class="related-sections">
+                                                <strong>Related Sections:</strong>
+                                                <a href="methods.html">► Research Methodology</a>
+                                                <a href="results.html">► Results Analysis</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Slide 2 -->
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <img src="assets/imgs/Figure3.jpg" class="card-img" alt="Brain Regions of Interest">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Brain Regions of Interest</h5>
+                                            <p>Anatomical locations of the Anterior Cingulate Cortex (ACC) and Precuneus (PC) – the two key regions analyzed in the study. These hubs of the default mode network show early functional changes in Alzheimer's disease.</p>
+                                            <div class="related-sections">
+                                                <strong>Related Sections:</strong>
+                                                <a href="methods.html">► Methods: ROI Selection</a>
+                                                <a href="discussion.html">► Discussion: Neuroanatomical Implications</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Slide 3 -->
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <img src="assets/imgs/Figure2.jpg" class="card-img" alt="Power Spectral Density Comparison">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Power Spectral Density Comparison</h5>
+                                            <p>Comparison of average power spectral density between CONV (converters) and NOCONV (non‑converters) groups, showing the characteristic "oscillatory slowing" – reduced beta power and increased low‑frequency power in converters.</p>
+                                            <div class="related-sections">
+                                                <strong>Related Sections:</strong>
+                                                <a href="results.html">► Results: PSD Analysis</a>
+                                                <a href="discussion.html">► Discussion: Interpretation</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Slide 4 -->
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <img src="assets/imgs/Figure4.jpg" class="card-img" alt="Event‑Based vs. Traditional Analysis">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Event‑Based vs. Traditional Analysis</h5>
+                                            <p>Visual comparison between event‑based analysis (capturing transient bursts) and traditional averaged power analysis. Highlights how event features provide additional predictive information beyond static power measures.</p>
+                                            <div class="related-sections">
+                                                <strong>Related Sections:</strong>
+                                                <a href="methods.html">► Methods: Event Detection</a>
+                                                <a href="discussion.html">► Discussion: Methodological Advantages</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Navigation buttons -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <!-- Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PDF Download Section -->
+                <section id="pdf" class="pdf-section">
+                    <div class="container">
+                        <div class="references-header">
+                            <h2 class="section-title">Full Research Paper</h2>
+                            <p class="section-subtitle">
+                                Download the complete research paper for detailed methodology, results, and discussion.
+                            </p>
+                        </div>
+                        
+                        <div class="pdf-download">
+                            <div class="pdf-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <h3 class="pdf-title">Alzheimer's Disease Beta Events Study</h3>
+                            <p class="pdf-description">
+                                The complete research paper in PDF format includes all sections, figures, tables, and references. This is the original study published in the scientific journal.
+                            </p>
+                            <a href="assets/downloads/alz.pdf" class="pdf-download-btn" download>
+                                <i class="fas fa-download"></i>
+                                Download Full Paper (PDF)
+                            </a>
+                            <p class="pdf-size">File size: ~2.5 MB</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Floating Menu Button -->
+    <button class="floating-nav-toggle" id="floating-nav-toggle" aria-label="打开导航菜单">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Mobile Sidebar Content -->
+    <div class="mobile-sidebar" id="mobile-sidebar">
+        <div class="mobile-sidebar-header">
+            <h3>Table of Contents</h3>
+            <button class="close-sidebar" id="close-sidebar" aria-label="关闭导航菜单">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="sidebar-nav" id="mobile-sidebar-nav">
+            <!-- Navigation links will be dynamically populated by JavaScript -->
+            <div class="sidebar-loading">Loading navigation...</div>
+        </nav>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand mb-3">
+                        <div class="d-flex align-items-center">
+                            <div class="logo-placeholder me-2">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <span class="brand-name">iGEM</span>
+                                <span class="brand-subtitle">Wiki Coding</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        A front-end development demonstration for iGEM ShanghaiTech 2026 Wiki Coding team selection.
+                    </p>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
+                        <li><a href="paper-details.html"><i class="fas fa-chevron-right me-2"></i>Paper Details</a></li>
+                        <li><a href="methods.html"><i class="fas fa-chevron-right me-2"></i>Methods</a></li>
+                        <li><a href="results.html"><i class="fas fa-chevron-right me-2"></i>Results</a></li>
+                        <li><a href="discussion.html"><i class="fas fa-chevron-right me-2"></i>Discussion</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right me-2"></i>About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-heading">Important Links</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="https://jihulab.com/jennicayang-group/JennicaYang-iGem" target="_blank">
+                                <i class="fab fa-gitlab me-2"></i>GitLab Repository
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/JennicaYang06/yjw_learning_for_iGem" target="_blank">
+                                <i class="fab fa-github me-2"></i>My Notes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://competition.igem.org/deliverables/team-wiki" target="_blank">
+                                <i class="fas fa-external-link-alt me-2"></i>iGEM Wiki Requirements
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://2025.igem.wiki/shanghaitech-china/index.html" target="_blank">
+                                <i class="fas fa-globe me-2"></i>iGEM ShanghaiTech 2025
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="footer-divider">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="footer-copyright">
+                        &copy; 2026 iGEM Wiki Coding Selection Project. All rights reserved.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="footer-disclaimer">
+                        This website is for demonstration purposes only.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Swiper JS for Picture Gallery -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="assets/js/script.js"></script>
+    
+    <!-- Custom JavaScript for About Page -->
+    <script>
+        /**
+         * Toggle reference content display/hide
+         * @param {HTMLElement} element - The clicked header element
+         */
+        function toggleReferenceContent(element) {
+            // Find parent container and content area
+            const container = element.closest('.collapsible-container');
+            const content = container.querySelector('.collapsible-content');
+            const toggleButton = container.querySelector('.toggle-button');
+          
+            // Toggle expand/collapse state
+            if (content.classList.contains('open')) {
+                // Collapse content
+                content.classList.remove('open');
+                element.classList.remove('active');
+                content.style.maxHeight = '0';
+            } else {
+                // Expand content
+                content.classList.add('open');
+                element.classList.add('active');
+                // Set sufficient max-height to ensure content fully displays
+                content.style.maxHeight = content.scrollHeight + 100 + 'px';
+            }
+        }
+
+        // Initialize keyboard accessibility
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+          
+            collapsibleHeaders.forEach(header => {
+                // Add keyboard support
+                header.setAttribute('tabindex', '0');
+                header.setAttribute('role', 'button');
+                header.setAttribute('aria-expanded', header.nextElementSibling.classList.contains('open'));
+              
+                header.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleReferenceContent(this);
+                    }
+                });
+            });
+
+            // Initialize Swiper for picture gallery
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1, // Default one slide per view
+                spaceBetween: 20, // Card spacing
+                loop: true, // Loop playback
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                    768: { slidesPerView: 2 }, // Show 2 slides at 768px width
+                    1024: { slidesPerView: 3 } // Show 3 slides at 1024px width
+                }
+            });
+
+            // Sidebar navigation initialization
+            let closeMobileSidebar = function() {};
+            
+            function initSidebarNavigation() {
+                const desktopSidebarNav = document.getElementById('about-sidebar');
+                const mobileSidebarNav = document.getElementById('mobile-sidebar-nav');
+                
+                // Get all content sections
+                const sections = [
+                    document.getElementById('references'),
+                    document.getElementById('authors'),
+                    document.getElementById('gallery'),
+                    document.getElementById('pdf')
+                ].filter(section => section !== null);
+                
+                if (sections.length === 0) return;
+                
+                // Create navigation list (for both desktop and mobile)
+                function createNavList() {
+                    const navList = document.createElement('ul');
+                    
+                    sections.forEach((section, index) => {
+                        let heading = section.querySelector('h2.section-title');
+                        if (!heading) return;
+                        
+                        // Create unique ID if not already present
+                        let sectionId = section.id;
+                        if (!sectionId) {
+                            sectionId = 'about-section-' + (index + 1);
+                            section.id = sectionId;
+                        }
+                        
+                        // Create list item and link
+                        const listItem = document.createElement('li');
+                        const link = document.createElement('a');
+                        link.href = '#' + sectionId;
+                        link.textContent = heading.textContent;
+                        link.className = 'sidebar-link';
+                        link.setAttribute('data-target', sectionId);
+                        
+                        // Add smooth scrolling behavior
+                        link.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            const target = document.getElementById(sectionId);
+                            if (target) {
+                                // Calculate navbar offset
+                                const navbar = document.querySelector('.navbar');
+                                const navbarHeight = navbar ? navbar.offsetHeight : 80;
+                                const targetPosition = target.offsetTop - navbarHeight - 20;
+                                
+                                window.scrollTo({
+                                    top: targetPosition,
+                                    behavior: 'smooth'
+                                });
+                                
+                                // If mobile, close sidebar
+                                closeMobileSidebar();
+                            }
+                        });
+                        
+                        listItem.appendChild(link);
+                        navList.appendChild(listItem);
+                    });
+                    
+                    return navList;
+                }
+                
+                // Update desktop sidebar
+                if (desktopSidebarNav) {
+                    desktopSidebarNav.innerHTML = '';
+                    desktopSidebarNav.appendChild(createNavList());
+                }
+                
+                // Update mobile sidebar
+                if (mobileSidebarNav) {
+                    mobileSidebarNav.innerHTML = '';
+                    mobileSidebarNav.appendChild(createNavList());
+                }
+                
+                // Initialize scroll spy
+                initScrollSpy();
+            }
+
+            // Initialize scroll spy
+            function initScrollSpy() {
+                const sections = [
+                    document.getElementById('references'),
+                    document.getElementById('authors'),
+                    document.getElementById('gallery'),
+                    document.getElementById('pdf')
+                ].filter(section => section !== null);
+                
+                const desktopSidebarNav = document.getElementById('about-sidebar');
+                const mobileSidebarNav = document.getElementById('mobile-sidebar-nav');
+                
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '-100px 0px -70% 0px',
+                    threshold: 0
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        const targetId = entry.target.id;
+                        
+                        // Update desktop sidebar
+                        if (desktopSidebarNav) {
+                            const desktopLink = desktopSidebarNav.querySelector(`[data-target="${targetId}"]`);
+                            if (desktopLink) {
+                                if (entry.isIntersecting) {
+                                    desktopLink.classList.add('active');
+                                } else {
+                                    desktopLink.classList.remove('active');
+                                }
+                            }
+                        }
+                        
+                        // Update mobile sidebar
+                        if (mobileSidebarNav) {
+                            const mobileLink = mobileSidebarNav.querySelector(`[data-target="${targetId}"]`);
+                            if (mobileLink) {
+                                if (entry.isIntersecting) {
+                                    mobileLink.classList.add('active');
+                                } else {
+                                    mobileLink.classList.remove('active');
+                                }
+                            }
+                        }
+                    });
+                }, observerOptions);
+                
+                // Observe all sections
+                sections.forEach(section => {
+                    observer.observe(section);
+                });
+            }
+
+            // Initialize mobile sidebar functionality
+            function initMobileSidebar() {
+                const floatingToggle = document.getElementById('floating-nav-toggle');
+                const overlay = document.getElementById('sidebar-overlay');
+                const mobileSidebar = document.getElementById('mobile-sidebar');
+                const closeBtn = document.getElementById('close-sidebar');
+                
+                if (!floatingToggle || !overlay || !mobileSidebar || !closeBtn) return;
+                
+                // Open sidebar
+                function openMobileSidebar() {
+                    mobileSidebar.classList.add('active');
+                    overlay.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                }
+                
+                // Close sidebar
+                closeMobileSidebar = function() {
+                    mobileSidebar.classList.remove('active');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = ''; // Restore scrolling
+                };
+                
+                // Event listeners
+                floatingToggle.addEventListener('click', openMobileSidebar);
+                closeBtn.addEventListener('click', closeMobileSidebar);
+                overlay.addEventListener('click', closeMobileSidebar);
+                
+                // ESC key closes sidebar
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && mobileSidebar.classList.contains('active')) {
+                        closeMobileSidebar();
+                    }
+                });
+            }
+            
+            // Initialize mobile sidebar first
+            initMobileSidebar();
+            
+            // Initialize sidebar navigation after content is loaded
+            initSidebarNavigation();
+        });
+    </script>
+    
+    <!-- Back to Top Button JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Back to Top Button Functionality
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            function toggleBackToTop() {
+                if (window.scrollY > 500) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            }
+            
+            backToTopBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Listen to scroll events
+            window.addEventListener('scroll', toggleBackToTop);
+            
+            // Initialize on page load
+            toggleBackToTop();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+pages:
+  stage: deploy
+  script:
+    - echo "正在部署 public/ 目录下的文件..."
+  artifacts:
+    paths:
+      - public  # 关键：路径改为 public 文件夹
+  only:
+    - main

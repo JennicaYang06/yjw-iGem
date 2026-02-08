@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods - iGEM Wiki Coding Selection | Beta Events in Alzheimer's Study</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style-methods.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @media (max-width: 768px) {
+            .methods-hero {
+                padding: 3rem 0 2rem;
+            }
+            
+            .methods-section {
+                padding: 2.5rem 0;
+            }
+            
+            .method-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar - Sticky Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <!-- Logo and Brand Name -->
+            <a class="navbar-brand" href="index.html">
+                <div class="d-flex align-items-center">
+                    <div class="logo-placeholder me-2">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div>
+                        <span class="brand-name">iGEM</span>
+                        <span class="brand-subtitle">Wiki Coding</span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="paper-details.html">
+                            <i class="fas fa-file-pdf me-1"></i> Paper Details
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="methods.html">
+                            <i class="fas fa-flask me-1"></i> Methods
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="results.html">
+                            <i class="fas fa-images me-1"></i> Results
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="discussion.html">
+                            <i class="fas fa-comments me-1"></i> Discussion
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle me-1"></i> About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="methods-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center">
+                    <h1 class="display-5 fw-bold mb-2">Research Methodology</h1>
+                    
+                    <p class="lead mb-4">
+                        This study employed a comprehensive methodology combining neuropsychological assessment, magnetoencephalography (MEG) data acquisition, and advanced spectral event analysis to investigate beta events as early biomarkers of Alzheimer's disease conversion.
+                    </p>
+                    <p class="text-muted mb-4" style="font-size: 1rem;"><strong>Interactive tip</strong>: Click or tap highlighted terms for detailed illustrations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content with Sidebar Navigation -->
+    <div class="wrapper">
+        <aside class="sidebar">
+            <nav class="sidebar-nav" id="methods-sidebar">
+                <!-- Navigation links will be dynamically generated by JavaScript -->
+                <div class="sidebar-loading">Loading navigation...</div>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <div id="methods-content">
+                <!-- Dynamic content will be loaded by JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand mb-3">
+                        <div class="d-flex align-items-center">
+                            <div class="logo-placeholder me-2">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <span class="brand-name">iGEM</span>
+                                <span class="brand-subtitle">Wiki Coding</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        A front-end development demonstration for iGEM ShanghaiTech 2026 Wiki Coding team selection.
+                    </p>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
+                        <li><a href="paper-details.html"><i class="fas fa-chevron-right me-2"></i>Paper Details</a></li>
+                        <li><a href="methods.html"><i class="fas fa-chevron-right me-2"></i>Methods</a></li>
+                        <li><a href="results.html"><i class="fas fa-chevron-right me-2"></i>Results</a></li>
+                        <li><a href="discussion.html"><i class="fas fa-chevron-right me-2"></i>Discussion</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right me-2"></i>About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-heading">Important Links</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="https://jihulab.com/jennicayang-group/JennicaYang-iGem" target="_blank">
+                                <i class="fab fa-gitlab me-2"></i>GitLab Repository
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/JennicaYang06/yjw_learning_for_iGem" target="_blank">
+                                <i class="fab fa-github me-2"></i>My Notes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://competition.igem.org/deliverables/team-wiki" target="_blank">
+                                <i class="fas fa-external-link-alt me-2"></i>iGEM Wiki Requirements
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://2025.igem.wiki/shanghaitech-china/index.html" target="_blank">
+                                <i class="fas fa-globe me-2"></i>iGEM ShanghaiTech 2025
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="footer-divider">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="footer-copyright">
+                        &copy; 2026 iGEM Wiki Coding Selection Project. All rights reserved.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="footer-disclaimer">
+                        This website is for demonstration purposes only.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 移动端悬浮菜单按钮 -->
+    <button class="floating-nav-toggle" id="floating-nav-toggle" aria-label="打开导航菜单">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- 移动端侧边栏覆盖层 -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- 移动端侧边栏内容 -->
+    <div class="mobile-sidebar" id="mobile-sidebar">
+        <div class="mobile-sidebar-header">
+            <h3>目录导航</h3>
+            <button class="close-sidebar" id="close-sidebar" aria-label="关闭导航菜单">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="sidebar-nav" id="mobile-sidebar-nav">
+            <!-- 导航链接将由JavaScript动态填充 -->
+            <div class="sidebar-loading">加载导航中...</div>
+        </nav>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="assets/js/script.js"></script>
+    
+    <!-- Methods Content JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Methods content from methods-sum.md converted to HTML
+            const methodsContent = `
+                <div class="method-card">
+                    <h4>2.1. Subject recruitment and neuropsychological assessment</h4>
+                    <p>The study employed a longitudinal, prospective design with a cohort of 85 right-handed, native Spanish-speaking patients diagnosed with mild cognitive impairment (MCI). Participants were recruited from Hospital Clínico Universitario San Carlos in Madrid. The experimental design, illustrated in 
+                        <strong class="trigger" tabindex="0" role="button" aria-expanded="false">Figure 1A
+                            <span class="speech-bubble">
+                                <img src="https://i.ibb.co/7tQBYB22/Figure1A.jpg" alt="Figure 1A">
+                                <span class="bubble-text">Figure 1A</span>
+                            </span>
+                        </strong>
+                        , involved an initial baseline assessment (Stage 1) comprising a comprehensive neuropsychological battery and a magnetoencephalography (MEG) recording. Following a 2.5-year interval (Stage 2), participants were classified into two groups based on established criteria for probable Alzheimer's disease dementia: MCI patients who had converted to AD (CONV, N=41) and those who had not converted (NOCONV, N=44). The two groups were matched for age, sex, and years of education at baseline.</p>
+                 
+                    <div class="highlight-box">
+                        <p><strong>Table 1</strong> presents the demographic and neuropsychological characteristics of both groups at baseline. It confirms the groups were well-matched on demographic variables (all p = n.s.). However, as expected in a prodromal AD sample, the future CONV group already showed significantly poorer performance on multiple tests of logical memory (both immediate and delayed recall of units and themes; all p < 0.05), highlighting early episodic memory deficits. Other tests of working memory (Inverse Digits), language (Semantic Fluency, Boston Naming Test), executive function (Trail Making Test-B), and global screening (Clock-Drawing Test) did not show significant baseline differences. The neuropsychological assessment included nine tests to evaluate memory, working memory, language, executive function, and global cognition.</p>
+                        <div class="table-container" aria-label="Table 1: Demographic and neuropsychological characteristics">
+                            <table class="research-table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Descriptives</th>
+                                <th scope="col">NO CONV<br><small>Mean ± SD</small></th>
+                                <th scope="col">CONV<br><small>Mean ± SD</small></th>
+                                <th scope="col"><em>p</em>-value</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Age</td>
+                                <td>75.25 ± 5.36</td>
+                                <td>75.39 ± 4.99</td>
+                                <td><em>t</em>(83), <em>p</em> = n.s.</td>
+                            </tr>
+                            <tr>
+                                <td>Sex</td>
+                                <td>N = 44; 19 (m), 25 (f)</td>
+                                <td>N = 41; 17 (m), 24 (f)</td>
+                                <td><em>Xi</em> (1), <em>p</em> = n.s.</td>
+                            </tr>
+                            <tr>
+                                <td>Education (years)</td>
+                                <td>9.89 ± 5.39</td>
+                                <td>8.32 ± 4.30</td>
+                                <td><em>t</em>(71), <em>p</em> = n.s.</td>
+                            </tr>
+                            <tr>
+                                <td>Immediate logic Memory (units)</td>
+                                <td>17.30 ± 12.61</td>
+                                <td>10.89 ± 7.41</td>
+                                <td class="significant"><em>t</em>(83), <em>p</em> = 0.01</td>
+                            </tr>
+                            <tr>
+                                <td>Delayed logic Memory (units)</td>
+                                <td>7.64 ± 9.10</td>
+                                <td>2.20 ± 4.08</td>
+                                <td class="significant"><em>t</em>(83), <em>p</em> < 0.01</td>
+                            </tr>
+                            <tr>
+                                <td>Immediate logic Memory (themes)</td>
+                                <td>10.60 ± 5.03</td>
+                                <td>7.70 ± 3.83</td>
+                                <td class="significant"><em>t</em>(83), <em>p</em> < 0.01</td>
+                            </tr>
+                            <tr>
+                                <td>Delayed logic Memory (themes)</td>
+                                <td>4.86 ± 4.52</td>
+                                <td>2.29 ± 2.47</td>
+                                <td class="significant"><em>t</em>(83), <em>p</em> < 0.01</td>
+                            </tr>
+                            <tr>
+                                <td>Inverse digits</td>
+                                <td>4.16 ± 1.79</td>
+                                <td>4.15 ± 1.28</td>
+                                <td><em>t</em>(83), <em>p</em> = n.s.</td>
+                            </tr>
+                            <tr>
+                                <td>Semantic fluency</td>
+                                <td>11.86 ± 3.56</td>
+                                <td>11.15 ± 3.60</td>
+                                <td><em>t</em>(83), <em>p</em> = n.s.</td>
+                            </tr>
+                            <tr>
+                                <td>Trail Making Test - B</td>
+                                <td>211.15 ± 112.72</td>
+                                <td>251.34 ± 108.15</td>
+                                <td><em>t</em>(83), <em>p</em> = n.s.</td>
+                            </tr>
+                            <tr>
+                                <td>Boston Naming Test</td>
+                                <td>46.45 ± 9.77</td>
+                                <td>43.80 ± 8.74</td>
+                                <td><em>t</em>(83), <em>p</em> = n.s.</td>
+                            </tr>
+                            <tr>
+                                <td>Clock-Drawing Test</td>
+                                <td>5.43 ± 2.08</td>
+                                <td>5.07 ± 2.26</td>
+                                <td><em>t</em>(83), <em>p</em> = n.s.</td>
+                            </tr>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <td colspan="4"><small>Non-significant <em>p</em>-values are marked as n.s.</small></td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="method-card">
+                    <h4>2.2. Magnetoencephalography data acquisition</h4>
+                    <p>Resting-state neuromagnetic data were acquired using a 306-channel (102 magnetometers, 204 planar gradiometers) Vectorview MEG system within a magnetically shielded room. A 5-minute eyes-closed resting-state recording was obtained per participant (sampling rate: 1000 Hz; online band-pass filter: 0.1-330 Hz). Structural T1-weighted MRI scans were acquired within one month for precise source reconstruction. Offline preprocessing of continuous MEG data was performed using the temporal signal-space separation (tSSS) algorithm in MaxFilter software to suppress external interference and compensate for head motion. Subsequent preprocessing and analysis were conducted in MATLAB using the FieldTrip toolbox, including automated and expert-guided visual inspection for the identification and removal of artifacts (ocular, muscular, jump).</p>
+                </div>
+                
+                <div class="method-card">
+                    <h4>2.3. Power spectral density (PSD)</h4>
+                    <p>For each source-localized time series from the regions of interest (ROIs), power spectral density was computed using Welch's periodogram method (1-second windows, 50% overlap). Power was normalized for each frequency by the total power in the 1-30 Hz range, resulting in a relative PSD measure for subsequent group comparisons.</p>
+                </div>
+                
+                <div class="method-card">
+                    <h4>2.4. Time-Frequency Representations (TFRs) & Spectral Events Extraction</h4>
+                    <p>The core innovative methodology involved the detection and characterization of transient high-power oscillatory events. The process is summarized in 
+                        <strong class="trigger" tabindex="0" role="button" aria-expanded="false">Figure 1 B-D
+                            <span class="speech-bubble">
+                                <img src="https://i.ibb.co/fYrjckZM/Figure1.jpg" alt="Figure 1">
+                                <span class="bubble-text">Figure 1</span>
+                            </span>
+                        </strong>.</p>
+                    
+                    <h5>Source and ROI Definition</h5>
+                    <p>MEG data were source-localized. Analysis focused on two ROIs central to the AD "X" model: the anterior cingulate cortex (ACC) and the precuneus (PC), as defined by the Schaefer 100-17 network atlas 
+                        (<strong class="trigger" tabindex="0" role="button" aria-expanded="false">Fig. 1B
+                            <span class="speech-bubble">
+                                <img src="https://i.ibb.co/SDnBpmNf/Figure1B.jpg" alt="Figure 1B">
+                                <span class="bubble-text">Figure 1B</span>
+                            </span>
+                        </strong>).</p>
+                    
+                    <h5>Time-Frequency Analysis</h5>
+                    <p>Time-frequency representations (TFRs) were computed for artifact-free 4-second epochs using a 7-cycle Morlet wavelet convolution (2-30 Hz range).</p>
+                    
+                    <h5>Frequency Band Definition</h5>
+                    <p>Based on the observed spectral slowing in the cohort and to accurately capture individual variability in the aging population, the alpha band was defined as 5-10 Hz (centered on a group-averaged peak of 8 Hz in PC). The beta band was defined as 12-30 Hz.</p>
+                    
+                    <h5>Event Detection</h5>
+                    <p>Spectral events were detected in the un-normalized TFRs using an established algorithm. An event was defined as a local power maximum exceeding a threshold of 6 times the median power (6x FOM) within the frequency band of interest (
+                        <strong class="trigger">Fig. 1C
+                            <span class="speech-bubble" tabindex="0" role="button" aria-expanded="false">
+                                <img src="https://i.ibb.co/SwjNVVZV/Figure1C.jpg" alt="Figure 1C">
+                                <span class="bubble-text">Figure 1C</span>
+                            </span>
+                        </strong>). The robustness of this threshold was validated against 4x and 8x FOM (see Supplementary Materials). A critical step involved removing "mirror events" caused by spatial smearing in source reconstruction between contralateral medial ROIs by keeping only the higher-amplitude event of a mirrored pair.
+                    </p>
+                    
+                    <h5>Event Feature Extraction</h5>
+                    <p>For each detected event, four key features were quantified (
+                        <strong class="trigger" tabindex="0" role="button" aria-expanded="false">Fig. 1D
+                            <span class="speech-bubble">
+                                <img src="https://i.ibb.co/1G0vQJVc/Figure1D.jpg" alt="Figure 1D">
+                                <span class="bubble-text">Figure 1D</span>
+                            </span>
+                        </strong>):
+                    </p>
+                    <ol>
+                        <li><strong>Rate:</strong> The number of events per 4-second epoch.</li>
+                        <li><strong>Duration:</strong> The full-width at half-maximum (FWHM) of the event in the time domain.</li>
+                        <li><strong>Frequency Span (Fspan):</strong> The FWHM of the event in the frequency domain.</li>
+                        <li><strong>Power:</strong> The normalized FOM power value at the event's peak.</li>
+                    </ol>
+                </div>
+                
+                <div class="method-card">
+                    <h4>2.5. Statistical analysis</h4>
+                    <p>A multi-step statistical approach was employed:</p>
+                    <ol>
+                        <li><strong>Spectral Slowing Confirmation:</strong> Non-parametric cluster-based permutation testing was used to identify frequency ranges showing significant PSD differences between CONV and NOCONV groups for each ROI (
+                            <strong class="trigger" tabindex="0" role="button" aria-expanded="false">see shaded clusters in Fig. 2
+                                <span class="speech-bubble">
+                                    <img src="https://i.ibb.co/392Xh4wq/Figure2.jpg" alt="Figure 2">
+                                    <span class="bubble-text">Figure 2</span>
+                                </span>
+                            </strong>).</li>
+                        <li><strong>Event-Power Relationship:</strong> Linear regression assessed the relationship between each event feature (rate, duration, Fspan, power) and the corresponding band-averaged relative power across all subjects.</li>
+                        <li><strong>Group Comparisons of Event Features:</strong> For each event feature (averaged within subject and across hemispheres for each ROI and frequency band), two-tailed t-tests (with Satterthwaite's approximation for unequal variances where needed) were used to test for differences between CONV and NOCONV groups. A directed hypothesis was applied: tests were one-tailed in the beta band (expecting lower values in CONV) and one-tailed in the alpha band (expecting higher values in CONV), consistent with the PSD findings. All p-values were corrected for multiple comparisons across tests using the Benjamini-Hochberg procedure (False Discovery Rate, Q=0.05). Effect sizes were calculated using a robust Cohen's <em>d</em>.</li>
+                        <li><strong>Prediction of Conversion:</strong> For beta event features showing group differences, logistic regression models were fitted to predict the binary conversion outcome (CONV vs. NOCONV). Odds ratios were calculated.</li>
+                        <li><strong>Association with Cognitive Performance:</strong> A composite Cognitive Performance Index was derived via Principal Component Analysis (PCA) from the z-scored neuropsychological test data (higher score = better performance). Linear regression was then used to examine the relationship between beta event features and this index, separately within the CONV and NOCONV groups.</li>
+                    </ol>
+                </div>
+            `;
+            
+            // Insert content into the page
+            document.getElementById('methods-content').innerHTML = methodsContent;
+            
+            // Initialize Sidebar Navigation with Scrollspy
+            function initSidebarNavigation() {
+                const desktopSidebarNav = document.getElementById('methods-sidebar');
+                const mobileSidebarNav = document.getElementById('mobile-sidebar-nav');
+                
+                // 获取所有方法卡片（内容部分）
+                const methodCards = document.querySelectorAll('.method-card');
+                if (methodCards.length === 0) return;
+                
+                // 创建导航列表的函数（同时用于桌面和移动端）
+                function createNavList() {
+                    const navList = document.createElement('ul');
+                    
+                    // 为每个方法卡片创建导航链接
+                    methodCards.forEach((card, index) => {
+                        const heading = card.querySelector('h4');
+                        if (!heading) return;
+                        
+                        // 创建唯一的ID（如果还没有）
+                        let cardId = card.id;
+                        if (!cardId) {
+                            cardId = 'method-section-' + (index + 1);
+                            card.id = cardId;
+                        }
+                        
+                        // 创建列表项和链接
+                        const listItem = document.createElement('li');
+                        const link = document.createElement('a');
+                        link.href = '#' + cardId;
+                        link.textContent = heading.textContent;
+                        link.className = 'sidebar-link';
+                        link.setAttribute('data-target', cardId);
+                        
+                        // 添加平滑滚动行为
+                        link.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            const target = document.getElementById(cardId);
+                            if (target) {
+                                // 计算导航栏偏移
+                                const navbar = document.querySelector('.navbar');
+                                const navbarHeight = navbar ? navbar.offsetHeight : 80;
+                                const targetPosition = target.offsetTop - navbarHeight - 20;
+                                
+                                window.scrollTo({
+                                    top: targetPosition,
+                                    behavior: 'smooth'
+                                });
+                                
+                                // 如果是移动端，关闭侧边栏
+                                closeMobileSidebar();
+                            }
+                        });
+                        
+                        listItem.appendChild(link);
+                        navList.appendChild(listItem);
+                    });
+                    
+                    return navList;
+                }
+                
+                // 更新桌面侧边栏
+                if (desktopSidebarNav) {
+                    desktopSidebarNav.innerHTML = '';
+                    desktopSidebarNav.appendChild(createNavList());
+                }
+                
+                // 更新移动端侧边栏
+                if (mobileSidebarNav) {
+                    mobileSidebarNav.innerHTML = '';
+                    mobileSidebarNav.appendChild(createNavList());
+                }
+                
+                // 初始化滚动监听（仅用于桌面侧边栏）
+                initScrollSpy();
+            }
+
+            // 初始化滚动监听
+            function initScrollSpy() {
+                const methodCards = document.querySelectorAll('.method-card');
+                const desktopSidebarNav = document.getElementById('methods-sidebar');
+                const mobileSidebarNav = document.getElementById('mobile-sidebar-nav');
+                
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '-100px 0px -70% 0px',
+                    threshold: 0
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        const targetId = entry.target.id;
+                        
+                        // 更新桌面侧边栏
+                        if (desktopSidebarNav) {
+                            const desktopLink = desktopSidebarNav.querySelector(`[data-target="${targetId}"]`);
+                            if (desktopLink) {
+                                if (entry.isIntersecting) {
+                                    desktopLink.classList.add('active');
+                                } else {
+                                    desktopLink.classList.remove('active');
+                                }
+                            }
+                        }
+                        
+                        // 更新移动端侧边栏
+                        if (mobileSidebarNav) {
+                            const mobileLink = mobileSidebarNav.querySelector(`[data-target="${targetId}"]`);
+                            if (mobileLink) {
+                                if (entry.isIntersecting) {
+                                    mobileLink.classList.add('active');
+                                } else {
+                                    mobileLink.classList.remove('active');
+                                }
+                            }
+                        }
+                    });
+                }, observerOptions);
+                
+                // 监听所有方法卡片
+                methodCards.forEach(card => {
+                    observer.observe(card);
+                });
+            }
+
+            // 移动端侧边栏功能
+            function initMobileSidebar() {
+                const floatingToggle = document.getElementById('floating-nav-toggle');
+                const overlay = document.getElementById('sidebar-overlay');
+                const mobileSidebar = document.getElementById('mobile-sidebar');
+                const closeBtn = document.getElementById('close-sidebar');
+                
+                if (!floatingToggle || !overlay || !mobileSidebar || !closeBtn) return;
+                
+                // 打开侧边栏
+                function openMobileSidebar() {
+                    mobileSidebar.classList.add('active');
+                    overlay.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // 防止背景滚动
+                }
+                
+                // 关闭侧边栏
+                function closeMobileSidebar() {
+                    mobileSidebar.classList.remove('active');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = ''; // 恢复滚动
+                }
+                
+                // 事件监听
+                floatingToggle.addEventListener('click', openMobileSidebar);
+                closeBtn.addEventListener('click', closeMobileSidebar);
+                overlay.addEventListener('click', closeMobileSidebar);
+                
+                // ESC键关闭侧边栏
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && mobileSidebar.classList.contains('active')) {
+                        closeMobileSidebar();
+                    }
+                });
+            }
+
+        
+            // Initialize sidebar after content is loaded
+            initSidebarNavigation();
+            
+            // 初始化移动端侧边栏
+            initMobileSidebar();
+            
+            // Back to Top Button Functionality
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            function toggleBackToTop() {
+                if (window.scrollY > 500) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            }
+            
+            backToTopBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Listen to scroll events
+            window.addEventListener('scroll', toggleBackToTop);
+            
+            // Initialize on page load
+            toggleBackToTop();
+        });
+    </script>
+</body>
+</html>
